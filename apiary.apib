@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://askfastmarket.appspot.com/products/broadcastnew
+HOST: http://askfastmarket.appspot.com
 
 # Ask Fast Marketplace
 
@@ -12,7 +12,7 @@ The base URL is: http://askfastmarket.appspot.com.
 To send your first message you have to give some information to the Market place. This includes the people whom you want to send you message to, the method of senden, etc. The example gives the bare minimum that the server needs to send a message. If you like to add more specific functionality all the parameters can be found at the documentation
 To send the request you send a json with the question and the addresses to the server. 
 
-## send first message [/appid={appid}&instanceid={instanceid}]
+## send first message [/products/broadcastnew/appid={appid}&instanceid={instanceid}]
 
 ### send message [POST]
 
@@ -39,7 +39,7 @@ post body:
             "message": "post man test",
             "retryMethod": "MANUAL",
             "retryLimit": 1,
-        "emailSubject": "post man test"
+            "emailSubject": "post man test"
         }
 
 
@@ -102,3 +102,35 @@ Only used for emailing, this sets the subject of the email.
             "retryInfos": {},
             "ownerKey": "vincent"
         }
+
+## get response of you message [/resource/examples/clipboard]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
