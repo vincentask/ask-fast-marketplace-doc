@@ -305,7 +305,7 @@ post body (application/json):
         
 - adapterType: [SMS | CALL | EMAIL | XMPP | FACEBOOK | TWITTER]
 
-        Mandatory field which explicilty describes which channel is used to broadcast the message. 
+    Mandatory field which explicilty describes which channel is used to broadcast the message. 
 - addresses: 
 
         Mandatory field which describes all the address to which the message must be broadcasted. At Least one of the fields: address, contactInfoKey or groupKey must exist per channel. Only one broadcast message is sent however if the same address is found in multiple fields, then broadcast is done to only one. 
