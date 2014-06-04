@@ -159,7 +159,7 @@ Header:
 
 + response 400 ()
 
-## contacs [/accounts/contacts?detailed={detailed}&limit={limit}&offset={offset}&orderby={orderby}&fetchOwener={fetchowner}]
+## get all contacts [/accounts/contacts?detailed={detailed}&limit={limit}&offset={offset}&orderby={orderby}&fetchOwener={fetchowner}]
 
 The market place can also serve as a contact book to make it more convinient to store and retrieve contacts
 
@@ -181,6 +181,23 @@ The market place can also serve as a contact book to make it more convinient to 
             ],
             "lastAvailableTime": 1370372753829,
             "id": 1
+        }
+## get specific contacts [/accounts/contacts/{contactId}]
+
+### get specific contact [GET]
+
++ response (aplication/json)
+    
+        {
+            "id": 3,
+            "contactInfo": "1234567890",
+            "firstName": "Test",
+            "lastName": "Customer",
+            "contactInfoTag": "Name"|"Phone"|"Voip"|"Email"|"Fax"|"Address"|"DOB"|
+            "PURCHASED_NUMBER"|"Special"|"Other",
+            "label" : "Office",
+            "contactKey": 1,
+            "groupKeys": [1, 2, 3]
         }
 
 
