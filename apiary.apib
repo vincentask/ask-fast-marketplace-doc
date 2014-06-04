@@ -184,6 +184,38 @@ The market place can also serve as a contact book to make it more convinient to 
         }
 
 
+## create a contact [/accounts/contacts]
+
+### create a contact [POST]
+
+post body:
+
+        {
+            "id": 3,
+            "contactInfo": "1234567890",
+            "firstName": "Test",
+            "lastName": "Customer",
+            "contactInfoTag": "Name"|"Phone"|"Voip"|"Email"|"Fax"|"Address"|"DOB"|
+            "PURCHASED_NUMBER"|"Special"|"Other",
+            "label" : "Office",
+            "contactKey": 1,
+            "groupKeys": [1, 2, 3]
+        }
+
++ response 200 (aplication/json)
+
+        {
+            "id": 3,
+            "contactInfo": "1234567890",
+            "firstName": "Test",
+            "lastName": "Customer",
+            "contactInfoTag": "Name"|"Phone"|"Voip"|"Email"|"Fax"|"Address"|"DOB"|
+            "PURCHASED_NUMBER"|"Special"|"Other",
+            "label" : "Office",
+            "contactKey": 1,
+            "groupKeys": [1, 2, 3]
+        }
+
 ## get specific contacts [/accounts/contacts/{contactId}]
 
 ### get specific contact [GET]
