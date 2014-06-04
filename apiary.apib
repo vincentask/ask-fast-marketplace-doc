@@ -317,11 +317,12 @@ post body (application/json):
     Mandatory field which explicilty describes which channel is used to broadcast the message. 
 - addresses: 
 
-        Mandatory field which describes all the address to which the message must be broadcasted. At Least one of the fields: address, contactInfoKey or groupKey must exist per channel. Only one broadcast message is sent however if the same address is found in multiple fields, then broadcast is done to only one. 
+    Mandatory field which describes all the address to which the message must be broadcasted. At Least one of the fields: address, contactInfoKey or groupKey must exist per channel. Only one broadcast message is sent however if the same address is found in multiple fields, then broadcast is done to only one. 
 
 - adapterList: 
 
-        Optional field which gives an option to explicitly specifies which adapter to use for a particular channel. If not adapter is specified a default adapter that belongs to the currently logged in user is picked.
+    Optional field which gives an option to explicitly specifies which adapter to use for a particular channel. If not adapter is specified a default adapter that belongs to the currently logged in user is picked.
+
 - retryMethod (Manual): 
 
         [Auto|Manual] is used to indicate the method used when any broadcast send action (not delivery!) fails. 
