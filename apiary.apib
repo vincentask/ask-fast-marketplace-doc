@@ -202,7 +202,34 @@ The market place can also serve as a contact book to make it more convinient to 
             "groupKeys": [1, 2, 3]
         }
 
+### update a specific contact [PUT]
 
+post body:
+        {
+            "id": 3,
+            "contactInfo": "1234567890",
+            "firstName": "Test",
+            "lastName": "Customer",
+            "contactInfoTag": "Name"|"Phone"|"Voip"|"Email"|"Fax"|"Address"|"DOB"|
+            "PURCHASED_NUMBER"|"Special"|"Other",
+            "label" : "Office",
+            "contactKey": 1,
+            "groupKeys": [1, 2, 3]
+        }
+
++ response 200 (aplication/json)
+
+        {
+            "id": 3,
+            "contactInfo": "1234567890",
+            "firstName": "Test",
+            "lastName": "Customer",
+            "contactInfoTag": "Name"|"Phone"|"Voip"|"Email"|"Fax"|"Address"|"DOB"|
+            "PURCHASED_NUMBER"|"Special"|"Other",
+            "label" : "Office",
+            "contactKey": 1,
+            "groupKeys": [1, 2, 3]
+        }
 
 
 
