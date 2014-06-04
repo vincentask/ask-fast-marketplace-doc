@@ -159,11 +159,18 @@ Header:
 
 + response 400 ()
 
-## contacs [/accounts/contacts]
+## contacs [/accounts/contacts?detailed={detailed}&limit={limit}&offset={offset}&orderby={orderby}&fetchOwener={fetchowner}]
 
 The market place can also serve as a contact book to make it more convinient to store and retrieve contacts
 
 ### get all contact [GET]
+
++ parameters
+    + detailed (optional, String , `true`)... String `true` [true|false] When set to true Fetches all the contactInfos linked to each Contact, else only fetches the contactInfo ids linked to each contact.
+    + limit (optional, int , `50`)... int The number of Contact resources that must be fetched in this call. This is applicable only when orderBy is null. 
+    + offset (optional, int , `0`)... String The offset from which the contact resources must be retrieved. This is ideal for implementing a paging mechanism. Like limit, this is applicable only when orderBy is null.
+    + orderby (optional, String , `true`)... String [“contactInfo” | “firstName” | “lastName”] The index key on which the sorting has to be performed. Contact resources can be sorted based on either the “contactInfo”, “firstName” or “lastName”. Any other indexes will not fetch any results for the GET request. 
+    + fetchowner (optional, STRING , `true`)... String  [true|false] By default this call fetches all the Contacts, including the Contact of the currently logged in user (Owner Contact). If fetchOwner is set to false, it will ignore the owner contact and fetch the rest. Typically used in a phonebook application.
 
 + response 200 (aplication/json)
 
