@@ -141,7 +141,23 @@ Header:
             "ownerKey": "vincent"
         }
 
+#group Api documentation
 
+## login [login?username={username}&password={password
+
+### login [GET]
+
++ Parameters
+    + username (required, String , `vincent`)... String `username` of the user.
+    + password (required, String , `xxxxxxx`) ... String `password` of the user.
+
++ response 200 (aplication/json)
+    
+        {
+          "X-session_id": "xxxxxxxxxxxxxxxxxxxx"
+        }
+
++ response 400 ()
 
 
 
