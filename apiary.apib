@@ -300,7 +300,7 @@ The market place can also serve as a contact book to make it more convinient to 
 
 ### send new message manual [POST]
 
-post body (application/json):
++ request
 
         {
             "addresses": {
@@ -326,54 +326,16 @@ post body (application/json):
             "language": "<language codes described>"
         }
         
-- adapterType: [SMS | CALL | EMAIL | XMPP | FACEBOOK | TWITTER]
-
-    Mandatory field which explicilty describes which channel is used to broadcast the message. 
-- addresses: 
-
-    Mandatory field which describes all the address to which the message must be broadcasted. At Least one of the fields: address, contactInfoKey or groupKey must exist per channel. Only one broadcast message is sent however if the same address is found in multiple fields, then broadcast is done to only one. 
-
-- adapterList: 
-
-    Optional field which gives an option to explicitly specifies which adapter to use for a particular channel. If not adapter is specified a default adapter that belongs to the currently logged in user is picked.
-
-- retryMethod (Manual): 
-
-    [Auto|Manual] is used to indicate the method used when any broadcast send action (not delivery!) fails. 
-
-- retryLimit(5) 
-
-    is used to limit the number of auto-retries. This is not applicable if Manual RetryMethod is used.
-   
-- message(“null”): 
-
-    Simple text (or URL to a question (which can be used for allowing users to reply on the message)) message that has to be broadcasted.  
-
-- audio(“null”): 
-
-    (Specific to Voice only) Simple audio URL to a wav file (URL should end with “wav”) used to supercede the message text when performing a broadcast to text as well as voice mediums (SMS and CALL) in one call. If this is found to be null or not ending with “wav”, then the voice channel would speak out the message text. 
-
-- broadcastName(“null”): 
-
-    Custom name to describe this broadcast. 
-
-- emailSubject(“null”): 
-
-    Email subject (used only for EMAIL channel. 
-
-- senderName(“null”): 
-
-    Specific senderName used with all mediums except Call. Please be aware that for an SMS, defining a senderName will obviously remove the possibility to reply to a message. 
-
-Optional query parameters:
-
-- isPersisted(true): [true|false] 
-
-    Flag to confirm if this broadcasting has to be persisted. If its not persisted options to resent/retry the broadcast would not be possible. 
-
-- onlyPersist(false): [true|false] 
-
-    Flag to confirm if this broadcasting is only needed to be persisted. By default, a POST request would initiate an outBound broadcast. Setting this to true, will not send it, but only save it. 
+| name          | type           | description  |
+| ------------- |:---------:| -----|
+| `adapterType` | string    | addapters [SMS | CALL | EMAIL | XMPP | FACEBOOK | TWITTER] |
+| `adresses`    | arrray    | addapters (SMS, EMAIL, etc) each array should have an array of adresses in the format: “adress”:”test@email.com” |
+| `senderName`  | string    | The name you want to appear to be the sender of the message |
+| `message`     | string    | The body of the message. This should be short for sms texting |
+|`retryMethod`  | string    |AUTO or MANUAL -> if auto the system will repead as many times as set in the retry limit until there is a awnswer
+|`retryLimit`   | number    |Amout of times the server sends the message if there is no response
+|`broadcastName`| string    |Custom name to describe this broadcast|
+|`emailSubject` | string    |Only used for emailing, this sets the subject of the email|
 
 
 
