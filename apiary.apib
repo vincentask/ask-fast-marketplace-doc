@@ -44,20 +44,20 @@ post body:
 
 
 
-Addresses (arrray)of addapters (SMS, EMAIL, etc) each array should have an array of adresses in the format: “adress”:”test@email.com”.
+- Addresses (arrray)of addapters (SMS, EMAIL, etc) each array should have an array of adresses in the format: “adress”:”test@email.com”.
 
-senderName: (string)
-The name you want to appear to be the sender of the message
-message: (string)
-The body of the message. This should be short for sms texting. 
-retryMethod: (string)
-AUTO or MANUAL -> if auto the system will repead as many times as set in the retry limit until there is a awnswer.
-retryLimit: (number)
-Amout of times the server sends the message if there is no response
-broadcastName: (string)
-Custom name to describe this broadcast. 
-emailSubject: (string) 
-Only used for emailing, this sets the subject of the email.
+- senderName: (string)
+    The name you want to appear to be the sender of the message
+- message: (string)
+    The body of the message. This should be short for sms texting. 
+- retryMethod: (string)
+    AUTO or MANUAL -> if auto the system will repead as many times as set in the retry limit until there is a awnswer.
+- retryLimit: (number)
+    Amout of times the server sends the message if there is no response
+- broadcastName: (string)
+    Custom name to describe this broadcast. 
+- emailSubject: (string) 
+    Only used for emailing, this sets the subject of the email.
 
 + parameters
     + appid (required, String, `xxxxxxxx`) ... String `appid` of your aplication can be found in the developer page
