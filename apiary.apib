@@ -16,9 +16,7 @@ To send the request you send a json with the question and the addresses to the s
 
 ### send message [POST]
 
-Headers:
 
-Bearer token
 
 
 | name        | type           | description  |
@@ -35,6 +33,8 @@ Bearer token
 + parameters
     + appid (required, String, `xxxxxxxx`) ... String `appid` of your aplication can be found in the developer page
     + instanceid (required, String, `xxxxx`) ... String `instanceid` of your aplication can be found in the developer page
+    
+    
 
 + request
 
@@ -58,6 +58,12 @@ Bearer token
             "retryLimit": 1,
             "emailSubject": "post man test"
         }
+    
+
++ headers
+
+    vin:jan
+        
 
 + response 200 (aplication/json)
     
@@ -204,6 +210,7 @@ The market place can also serve as a contact book to make it more convinient to 
             "contactKey": 1,
             "groupKeys": [1, 2, 3]
         }
+        
 
 + response 200 (aplication/json)
 
@@ -223,9 +230,7 @@ The market place can also serve as a contact book to make it more convinient to 
 
 ### get contact [GET]
 
-+ payload header
 
-            username:vincent
 
 
 + response 200 (aplication/json)
