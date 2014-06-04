@@ -273,6 +273,37 @@ post body:
         status code: 200
         }
 
+## send new message [/products/broadcastnew]
+
+### sned new message [POST]
+
+post body (application/json):
+
+        {
+            "addresses": {
+                "<AdapterType>": [
+                {
+                    "address": "<email address1>”
+                }
+                {
+                    "address": "<email address2>”
+                }
+                ]
+            },
+                "adapterList": {
+                "<AdapterType>": "<calling adapterId>"
+            },
+            "senderName": "<senderName (used for all but CALL channel)>",
+            "message": "Test message",
+            "audio": "http://autioURL.wav",
+            "retryMethod": "AUTO|MANUAL",
+            "retryLimit": <retryLimit>,
+            "broadcastName": "<Custom name to describe this broadcast>",
+            "emailSubject": "<email subject (used only for EMAIL channel)>",
+            "language": "<language codes described>"
+        }
+
+
 
 
 
