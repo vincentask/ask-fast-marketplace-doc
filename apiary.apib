@@ -300,6 +300,18 @@ The market place can also serve as a contact book to make it more convinient to 
 
 ### send new message manual [POST]
 
+body parameters
+
+| name          | type           | description  |
+| ------------- |:---------:| -----|
+| `adapterType` | string    | addapters [SMS | CALL | EMAIL | XMPP | FACEBOOK | TWITTER] |
+| `adresses`    | arrray    | addapters (SMS, EMAIL, etc) each array should have an array of adresses in the format: “adress”:”test@email.com” |
+| `senderName`  | string    | The name you want to appear to be the sender of the message |
+| `message`     | string    | The body of the message. This should be short for sms texting |
+|`retryMethod`  | string    |AUTO or MANUAL -> if auto the system will repead as many times as set in the retry limit until there is a awnswer
+|`retryLimit`   | number    |Amout of times the server sends the message if there is no response
+|`broadcastName`| string    |Custom name to describe this broadcast|
+|`emailSubject` | string    |Only used for emailing, this sets the subject of the email|
 + request
 
         {
@@ -325,17 +337,9 @@ The market place can also serve as a contact book to make it more convinient to 
             "emailSubject": "<email subject (used only for EMAIL channel)>",
             "language": "<language codes described>"
         }
-        
-| name          | type           | description  |
-| ------------- |:---------:| -----|
-| `adapterType` | string    | addapters [SMS | CALL | EMAIL | XMPP | FACEBOOK | TWITTER] |
-| `adresses`    | arrray    | addapters (SMS, EMAIL, etc) each array should have an array of adresses in the format: “adress”:”test@email.com” |
-| `senderName`  | string    | The name you want to appear to be the sender of the message |
-| `message`     | string    | The body of the message. This should be short for sms texting |
-|`retryMethod`  | string    |AUTO or MANUAL -> if auto the system will repead as many times as set in the retry limit until there is a awnswer
-|`retryLimit`   | number    |Amout of times the server sends the message if there is no response
-|`broadcastName`| string    |Custom name to describe this broadcast|
-|`emailSubject` | string    |Only used for emailing, this sets the subject of the email|
+
+   
+
 
 
 
