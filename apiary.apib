@@ -361,16 +361,55 @@ Optional query parameters:
 
     Flag to confirm if this broadcasting is only needed to be persisted. By default, a POST request would initiate an outBound broadcast. Setting this to true, will not send it, but only save it. 
 
-+ response 200 (application/json)
 
-        hallo
+
++ respone 200 (application/json)
+
+        {
+            "broadcast": {
+               "addresses": {
+                    "EMAIL": [
+                      {
+                         "address": "sshetty@ask-cs.com",
+                            "responseMessage": "No adapters of Type: EMAIL found for user: root",
+                            "contactName": "John Dunbar"
+                       }
+                    ]
+                },
+                "adapterList": {
+                    "CALL": "151b05e0-25f3-11e3-a6c7-00007f000001"
+                },
+                "senderName": "Broadcast message",
+                "emailSubject": "Test message",
+                "message": "This is a test message",
+                "broadcastName": "This is my broadcast",
+                "timeStamp": 1383935826888,
+                "language": <language codes described>,
+                "retryCount": 5,
+                "retryLimit": 5,
+                "retryMethod": "AUTO"
+            },
+            "id": 5910974510923776,
+            "broadcastCount": 1,
+            "retryInfos": {
+            "EMAIL": [
+            {
+                "address": "sshetty@ask-cs.com",
+                "responseMessage": "No adapters of Type: EMAIL found for user: root",
+                "contactName": "John Dunbar"
+            }
+                ]
+            }
+        }
 
 
 
 
 ### retrieve all messages [GET]
 
-+ response 200 (application/json)
++ response 200 (application/json) 
+
+        hhs
 
 
 
