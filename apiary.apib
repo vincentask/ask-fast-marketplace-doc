@@ -175,6 +175,29 @@ header parameters
 ## get all contacts [/accounts/contacts?detailed={detailed}&limit={limit}&offset={offset}&orderby={orderby}&fetchOwener={fetchowner}]
 
 The market place can also serve as a contact book to make it more convinient to store and retrieve contacts
+Contacts are set up as follows:
+
+        {
+            "id": 3,
+            "contactInfo": "1234567890",
+            "firstName": "Test",
+            "lastName": "Customer",
+            "contactInfoTag": "Name"|"Phone"|"Voip"|"Email"|"Fax"|"Address"|"DOB"|
+            "PURCHASED_NUMBER"|"Special"|"Other",
+            "label" : "Office",
+            "contactKey": 1,
+            "groupKeys": [1, 2, 3]
+        }
+
+
+| name        | type           | description  |
+| ------------- |:---------:| -----|
+| `id`    | string    | id of the contact |
+|`contactInfo`|string||
+|`contactInfoTag`|String||
+|`contactKey`|number||
+|`groupKeys`|array|numbers of the group in which the contact is in|
+
 
 ### get all contact [GET]
 
@@ -201,9 +224,7 @@ The market place can also serve as a contact book to make it more convinient to 
 
 ### create a contact [POST]
 
-| name        | type           | description  |
-| ------------- |:---------:| -----|
-| `id`    | string    | id of the contact |
+
 
 
 + request
