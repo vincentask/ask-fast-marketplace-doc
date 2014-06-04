@@ -68,7 +68,8 @@ To send the request you send a json with the question and the addresses to the s
 
 + headers
 
-            bearertoken:xxxxxxxxxxxx
+            sessionId:xxxxxxxxxxxx
+            Content-Type:application/json
         
 
 + response 200 (aplication/json)
@@ -115,6 +116,10 @@ To send the request you send a json with the question and the addresses to the s
 
 ### get response [GET]
 
++ headers
+
+            sessionId:xxxxxxxxxxxx
+            Content-Type:application/json
 
 + response 200 (aplication/json)
 
@@ -156,13 +161,16 @@ To send the request you send a json with the question and the addresses to the s
 
 # group Api documentation
 
+
+To send a request always send the sessid in the header, this can be retrieved with the login call. Make sure the aplication is of type: JSON
+
 ## login [/login?username={username}&password={password}]
 
 ### login [GET]
 
 + Parameters
     + username (required, String , `vincent`)... String `username` of the user.
-    + password (required, String , `xxxxxxx`) ... String `password` of the user.
+    + password (required, String , `xxxxxxx`) ... String `password` MD5 hassed.
 
 + response 200 (aplication/json)
     
@@ -202,6 +210,12 @@ Contacts are set up as follows:
 
 ### get all contact [GET]
 
++ headers
+
+            sessionId:xxxxxxxxxxxx
+            Content-Type:application/json
+
+
 + parameters
     + detailed (optional, String , `true`)... String `true` [true|false] When set to true Fetches all the contactInfos linked to each Contact, else only fetches the contactInfo ids linked to each contact.
     + limit (optional, int , `50`)... int The number of Contact resources that must be fetched in this call. This is applicable only when orderBy is null. 
@@ -225,7 +239,10 @@ Contacts are set up as follows:
 
 ### create a contact [POST]
 
++ headers
 
+            sessionId:xxxxxxxxxxxx
+            Content-Type:application/json
 
 
 + request
@@ -261,7 +278,10 @@ Contacts are set up as follows:
 
 ### get contact [GET]
 
++ headers
 
+            sessionId:xxxxxxxxxxxx
+            Content-Type:application/json
 
 
 + response 200 (aplication/json)
@@ -280,7 +300,10 @@ Contacts are set up as follows:
 
 ### update contact [PUT]
 
++ headers
 
+            sessionId:xxxxxxxxxxxx
+            Content-Type:application/json
 
 + request
 
@@ -312,6 +335,11 @@ Contacts are set up as follows:
 
 ### delete contact [DELETE]
 
++ headers
+
+            sessionId:xxxxxxxxxxxx
+            Content-Type:application/json
+
 + response 200 
 
         {
@@ -321,6 +349,8 @@ Contacts are set up as follows:
 ## send messages [/products/broadcastnew]
 
 ### send new message manual [POST]
+
+
 
 #####body parameters
 
@@ -334,6 +364,13 @@ Contacts are set up as follows:
 |`retryLimit`   | number    |Amout of times the server sends the message if there is no response
 |`broadcastName`| string    |Custom name to describe this broadcast|
 |`emailSubject` | string    |Only used for emailing, this sets the subject of the email|
+
+
++ headers
+
+            sessionId:xxxxxxxxxxxx
+            Content-Type:application/json
+
 + request
 
         {
@@ -409,6 +446,11 @@ Contacts are set up as follows:
 
 ### retrieve all messages [GET]
 
++ headers
+
+            sessionId:xxxxxxxxxxxx
+            Content-Type:application/json
+
 + response 200 (application/json) 
 
         {
@@ -451,6 +493,11 @@ Contacts are set up as follows:
 ## retrieve broadcast [/products/broadcastnew/{broadcastid}]
 
 ### retrieve specifiec broadcast [GET]
+
++ headers
+
+            sessionId:xxxxxxxxxxxx
+            Content-Type:application/json
 
 + parameters
     + broadcastid (required, String, `xxxxxx`) .... String `xxxxxxxx` the id the broadcast
@@ -495,6 +542,11 @@ Contacts are set up as follows:
         }
 
 ### delete specific broadcast [DELETE]
+
++ headers
+
+            sessionId:xxxxxxxxxxxx
+            Content-Type:application/json
 
 + parameters
     + broadcastid (required, String, `xxxxxx`) .... String `xxxxxxxx` the id the broadcast
