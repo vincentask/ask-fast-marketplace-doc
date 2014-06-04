@@ -115,7 +115,6 @@ header paramets:
 
 ### get response [GET]
 
-Header:
 
 + response 200 (aplication/json)
 
@@ -202,6 +201,10 @@ The market place can also serve as a contact book to make it more convinient to 
 
 ### create a contact [POST]
 
+| name        | type           | description  |
+| ------------- |:---------:| -----|
+| `id`    | string    | id of the contact |
+
 
 + request
 
@@ -255,7 +258,9 @@ The market place can also serve as a contact book to make it more convinient to 
 
 ### update contact [PUT]
 
-post body:
+
+
++ request
 
         {
             "id": 3,
