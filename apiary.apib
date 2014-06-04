@@ -64,5 +64,39 @@ Only used for emailing, this sets the subject of the email.
 + response 200 (aplication/json)
     
         {
-          "X-session_id": "xxxxxxxxxxxxxxxxxxxx"
-        }
+        "broadcast": {
+        "addresses": {
+            "SMS": [
+                {
+                    "address": "number",
+                    "adapterId": "5cc9c390-d1fb-11e3-9807-061c2777aa3c",
+                    "addressInfo": "Netherlands: 0031624107729",
+                    "contactName": ""
+                }
+            ],
+            "EMAIL": [
+                {
+                    "address": "email",
+                    "adapterId": "53dffd50-d203-11e3-b959-061c2777aa3c",
+                    "contactName": ""
+                }
+            ]
+        },
+        "adapterList": {},
+        "language": "nl-nl",
+        "senderName": "SenderName",
+        "emailSubject": "emailSubjectt",
+        "message": "Your message",
+        "broadcastName": "Your broadcast name",
+        "questionType": "[OPEN | COMMENT \ CLOSED] ",
+        "answers": [],
+        "timeStamp": 1399627155706,
+        "retryCount": 0,
+        "retryLimit": 1,
+        "retryMethod": "MANUAL"
+    },
+    "id": 6246531984261120,
+    "broadcastCount": 2,
+    "retryInfos": {},
+    "ownerKey": "vincent"
+}
