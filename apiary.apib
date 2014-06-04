@@ -20,11 +20,49 @@ Headers:
 
 Bearer token
 
+post body:
+
+{
+    "addresses": {
+        "EMAIL": [
+            {
+                "address": "test@email.com"
+            }
+        ],
+        "SMS": [
+            {
+                "address": "06000000000"
+            }
+        ]
+    },
+    "senderName": "vincent",
+    "message": "post man test",
+    "retryMethod": "MANUAL",
+    "retryLimit": 1,
+     "emailSubject": "post man test"
+}
+
+Addresses (arrray)of addapters (SMS, EMAIL, etc) each array should have an array of adresses in the format: “adress”:”test@email.com”.
+
+senderName: (string)
+The name you want to appear to be the sender of the message
+message: (string)
+The body of the message. This should be short for sms texting. 
+retryMethod: (string)
+AUTO or MANUAL -> if auto the system will repead as many times as set in the retry limit until there is a awnswer.
+retryLimit: (number)
+Amout of times the server sends the message if there is no response
+broadcastName: (string)
+Custom name to describe this broadcast. 
+emailSubject: (string) 
+Only used for emailing, this sets the subject of the email.
+
 + parameters
     + appid (required, String, `xxxxxxxx`) ... String `appid` of your aplication can be found in the developer page
     + instanceid (required, String, `xxxxx`) ... String `instanceid` of your aplication can be found in the developer page
 
-+ response 200 (aplicationtype/json)
++ response 200 (aplication/json)
+    
         {
-            ok
+          "X-session_id": "xxxxxxxxxxxxxxxxxxxx"
         }
