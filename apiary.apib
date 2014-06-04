@@ -329,26 +329,27 @@ post body (application/json):
 
 - retryLimit(5) 
 
-        is used to limit the number of auto-retries. This is not applicable if Manual RetryMethod is used.
-        
+    is used to limit the number of auto-retries. This is not applicable if Manual RetryMethod is used.
+   
 - message(“null”): 
 
-        Simple text (or URL to a question (which can be used for allowing users to reply on the message)) message that has to be broadcasted.  
+    Simple text (or URL to a question (which can be used for allowing users to reply on the message)) message that has to be broadcasted.  
 
 - audio(“null”): 
 
-        (Specific to Voice only) Simple audio URL to a wav file (URL should end with “wav”) used to supercede the message text when performing a broadcast to text as well as voice mediums (SMS and CALL) in one call. If this is found to be null or not ending with “wav”, then the voice channel would speak out the message text. 
+    (Specific to Voice only) Simple audio URL to a wav file (URL should end with “wav”) used to supercede the message text when performing a broadcast to text as well as voice mediums (SMS and CALL) in one call. If this is found to be null or not ending with “wav”, then the voice channel would speak out the message text. 
 
 - broadcastName(“null”): 
 
-        Custom name to describe this broadcast. 
+    Custom name to describe this broadcast. 
 
 - emailSubject(“null”): 
 
-        Email subject (used only for EMAIL channel. 
+    Email subject (used only for EMAIL channel. 
+
 - senderName(“null”): 
 
-        Specific senderName used with all mediums except Call. Please be aware that for an SMS, defining a senderName will obviously remove the possibility to reply to a message. 
+    Specific senderName used with all mediums except Call. Please be aware that for an SMS, defining a senderName will obviously remove the possibility to reply to a message. 
 
 Optional query parameters:
 - isPersisted(true): [true|false] 
