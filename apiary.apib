@@ -4,11 +4,9 @@ HOST: http://askfastmarket.appspot.com
 # Ask Fast Marketplace
 
 The marketplace is an extension to the Ask Fast API. This gives you the possibility to host your questions and answers on our servers. so you do not have to program anything on the server side. 
-Send your first message
-The base URL is: http://askfastmarket.appspot.com.
+The base URL is: http://askfastmarket.appspot.com
 
 # Group Getting started
-
 
 
 To send your first message you have to give some information to the Market place. This includes the people whom you want to send you message to, the method of senden, etc. The example gives the bare minimum that the server needs to send a message. If you like to add more specific functionality all the parameters can be found at the documentation
@@ -23,7 +21,7 @@ To send the request you send a json with the question and the addresses to the s
 
 To send this message always login first and use the session-id in the header, how to log in can be found in the documentation.
 
-| name        | type        | description  |
+| name          | type        | description  |
 | ------------- |:---------:| -----|
 | `adresses`    | arrray    | addapters (SMS, EMAIL, etc) each array should have an array of adresses in the format: “adress”:”test@email.com” |
 | `senderName`  | string    | The name you want to appear to be the sender of the message |
@@ -35,9 +33,9 @@ To send this message always login first and use the session-id in the header, ho
 
 #####header parameters
 
-| name        | type           | description  |
+| name          | type           | description  |
 | ------------- |:---------:| -----|
-| `bearertoken`    | string    | bearer token can be found at the developer page |
+| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
 
 
 + parameters
@@ -72,7 +70,7 @@ To send this message always login first and use the session-id in the header, ho
 
 + headers
 
-            sessionId:xxxxxxxxxxxx
+            X-SESSION_ID:xxxxxxxxxxxx
             Content-Type:application/json
         
 
@@ -122,7 +120,7 @@ To send this message always login first and use the session-id in the header, ho
 
 + headers
 
-            sessionId:xxxxxxxxxxxx
+            X-SESSION_ID:xxxxxxxxxxxx
             Content-Type:application/json
 
 + response 200 (aplication/json)
@@ -216,7 +214,7 @@ Contacts are set up as follows:
 
 + headers
 
-            sessionId:xxxxxxxxxxxx
+            X-SESSION_ID:xxxxxxxxxxxx
             Content-Type:application/json
 
 
@@ -227,7 +225,7 @@ Contacts are set up as follows:
     + orderby (optional, String , `true`)... String [“contactInfo” | “firstName” | “lastName”] The index key on which the sorting has to be performed. Contact resources can be sorted based on either the “contactInfo”, “firstName” or “lastName”. Any other indexes will not fetch any results for the GET request. 
     + fetchowner (optional, String , `true`)... String  [true|false] By default this call fetches all the Contacts, including the Contact of the currently logged in user (Owner Contact). If fetchOwner is set to false, it will ignore the owner contact and fetch the rest. Typically used in a phonebook application.
 
-+ response 200 (aplication/json)
++ response 200 (application/json)
 
         {
             "contactInfoRefs": [
@@ -245,7 +243,7 @@ Contacts are set up as follows:
 
 + headers
 
-            sessionId:xxxxxxxxxxxx
+            X-SESSION_ID:xxxxxxxxxxxx
             Content-Type:application/json
 
 
@@ -264,7 +262,7 @@ Contacts are set up as follows:
         }
         
 
-+ response 200 (aplication/json)
++ response 200 (application/json)
 
         {
             "id": 3,
@@ -284,11 +282,11 @@ Contacts are set up as follows:
 
 + headers
 
-            sessionId:xxxxxxxxxxxx
+            X-SESSION_ID:xxxxxxxxxxxx
             Content-Type:application/json
 
 
-+ response 200 (aplication/json)
++ response 200 (application/json)
     
         {
             "id": 3,
@@ -306,7 +304,7 @@ Contacts are set up as follows:
 
 + headers
 
-            sessionId:xxxxxxxxxxxx
+            X-SESSION_ID:xxxxxxxxxxxx
             Content-Type:application/json
 
 + request
@@ -341,7 +339,7 @@ Contacts are set up as follows:
 
 + headers
 
-            sessionId:xxxxxxxxxxxx
+            X-SESSION_ID:xxxxxxxxxxxx
             Content-Type:application/json
 
 + response 200 
@@ -372,7 +370,7 @@ Contacts are set up as follows:
 
 + headers
 
-            sessionId:xxxxxxxxxxxx
+            X-SESSION_ID:xxxxxxxxxxxx
             Content-Type:application/json
 
 + request
@@ -452,7 +450,7 @@ Contacts are set up as follows:
 
 + headers
 
-            sessionId:xxxxxxxxxxxx
+            X-SESSION_ID:xxxxxxxxxxxx
             Content-Type:application/json
 
 + response 200 (application/json) 
@@ -500,7 +498,7 @@ Contacts are set up as follows:
 
 + headers
 
-            sessionId:xxxxxxxxxxxx
+            X-SESSION_ID:xxxxxxxxxxxx
             Content-Type:application/json
 
 + parameters
@@ -549,7 +547,7 @@ Contacts are set up as follows:
 
 + headers
 
-            sessionId:xxxxxxxxxxxx
+            X-SESSION_ID:xxxxxxxxxxxx
             Content-Type:application/json
 
 + parameters
