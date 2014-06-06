@@ -6,6 +6,80 @@ HOST: http://askfastmarket.appspot.com
 The marketplace is an extension to the Ask Fast API. This gives you the possibility to host your questions and answers on our servers. so you do not have to program anything on the server side. 
 The base URL is: http://askfastmarket.appspot.com
 
+## libraries
+
+Library support is currently restricted to Java and PHP, if you have build your own library please let us know at: api@asf-fast.com. You can download the libraries from here, the manuals are in this document:
+
+- [Java library](https://github.com/askfast/askfast-api-java)
+- [PHP library] (https://github.com/askfast/askfast-api-php)
+
+Api documentation for each labrary can be found on the github and bellow
+
+## authentication
+
+For authentication the Ask Fast API uses a unique token this token can be requierd with an oath request as descriped in the login section. To make sure the connection is save all calls have to be via a HTTPS connections regualar HTTP will fail.
+
+## error handling
+
+Ask Fast Api uses regular HTTP response codes to indicate suesses or fail of the API request. A 200 response indicates a succesfull request. The 4xx response often means an errer form the user side, this could be an invalid request or a not authorised (401).
+
+Overview of HTTP response codes:
+
+- 200 → everything whent smoothly.
+- 400 → Bad request maybe a parameter is missing?
+- 401 → Not authorised, the autosisation faild.
+- 404 → Request not found.
+- 5xx → internal server error, we try to make the error logs easy to read for you.
+
+
+## dates
+
+All dates are standard UNIX (epoch) coded. This represents the seconds passed since 01-01-1970. Some examples:
+
+- 1396350000 - 12:00:00 01-01-2014
+- 946728000   - 12:00:00 01-01-2000
+
+
+## Pagination
+
+At the moment the pagination limitations is a 1000 responses per call. If you wish to go back even further you can change the date attribute, to fetch the results for a certain period.  
+
+## Rate limiting
+The Ask Fast Api uses a fair use policy, when you do not abuse the system you do not have a rate limiting
+
+## language codes
+
+If you want to make a call and use Text To Speech (TTS) you can use the following language codes
+
+|codes|langue|
+|----|---|
+|ca-es|Catalan|
+|zh-cn|Chinese (China)|
+|zh-hk|Chinese (Hong Kong)|
+|zh-tw|Chinese (Taiwan)|
+|da-dk|Danish|
+|nl-nl|Dutch|
+|en-au|English (Australia)|
+|en-ca|English (Canada)|
+|en-gb|nglish (Great Britain)|
+|en-in|English (India)|
+|en-us|English (United States)|
+|fi-fi|Finnish|
+|fr-ca|French (Canada)|
+|fr-fr|French (France)|
+|de-de|German|
+|it-it|Italian|
+|ja-jp|Japanese|
+|ko-kr|Korean|
+|nb-no|Norwegian
+|pl-pl|Polish|
+|pt-br|Portuguese (Brazil)|
+|pt-pt|Portuguese (Portugal)|
+|ru-ru|Russian|
+|es-mx|Spanish (Mexico)|
+|es-es|Spanish (Spain)|
+|sv-se|Swedish (Sweden)|
+
 # Group Getting started
 
 
