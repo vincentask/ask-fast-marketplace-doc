@@ -6,22 +6,13 @@ HOST: http://askfastmarket.appspot.com
 The marketplace is an extension to the Ask Fast API, which can be found [here](http://docs.askfast.apiary.io/). This gives you the possibility to host your questions and answers on our servers. so you do not have to program anything on the server side. 
 The base URL is: http://askfastmarket.appspot.com
 
-## libraries
-
-Library support is currently restricted to Java and PHP, if you have build your own library please let us know at: api@asf-fast.com. You can download the libraries from here, the manuals are in this document:
-
-- [Java library](https://github.com/askfast/askfast-api-java)
-- [PHP library] (https://github.com/askfast/askfast-api-php)
-
-Api documentation for each labrary can be found on the github and bellow
-
 ## authentication
 
-For authentication the Ask Fast API uses a unique token this token can be requierd with an oath request as descriped in the login section. To make sure the connection is save all calls have to be via a HTTPS connections regualar HTTP will fail.
+For authentication the marketplace usses a session id token, this can be retrieved with the login call. This token has to be send in every call to the server in the header.
 
 ## error handling
 
-Ask Fast Api uses regular HTTP response codes to indicate suesses or fail of the API request. A 200 response indicates a succesfull request. The 4xx response often means an errer form the user side, this could be an invalid request or a not authorised (401).
+Ask Fast marketplace uses regular HTTP response codes to indicate suesses or fail of the API request. A 200 response indicates a succesfull request. The 4xx response often means an errer form the user side, this could be an invalid request or a not authorised (401).
 
 Overview of HTTP response codes:
 
