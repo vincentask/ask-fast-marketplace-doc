@@ -3,6 +3,8 @@ HOST: http://askfastmarket.appspot.com
 
 # Ask Fast Marketplace
 
+Api end point: http://askfastmarket.appspot.com
+
 The marketplace is an extension to the Ask Fast API, which can be found [here](http://docs.askfast.apiary.io/). This gives you the possibility to host your questions and answers on our servers. so you do not have to program anything on the server side. 
 The base URL is: http://askfastmarket.appspot.com
 
@@ -82,7 +84,7 @@ To send the request you send a json with the question and the addresses to the s
 ### send message [POST]
 
 
-##### body parameters:
+#####body parameters:
 
 To send this message always login first and use the session-id in the header, how to log in can be found in the documentation.
 
@@ -107,37 +109,36 @@ To send this message always login first and use the session-id in the header, ho
     + appid (optional, String, `xxxxxxxx`) ... String `appid` of your aplication can be found in the developer page
     + instanceid (optional, String, `xxxxx`) ... String `instanceid` of your aplication can be found in the developer page
     
-+ model
+    
 
-        + headers
-        
-                    X-SESSION_ID:xxxxxxxxxxxx
-                    Content-Type:application/json
-                
-        
-        + request
-        
-            
++ request
+
+    
+        {
+                "addresses": {
+                "EMAIL": [
                 {
-                        "addresses": {
-                        "EMAIL": [
-                        {
-                            "address": "test@email.com"
-                        }
-                    ],
-                        "SMS": [
-                        {
-                            "address": "06000000000"
-                        }
-                    ]
-                    },
-                    "senderName": "vincent",
-                    "message": "post man test",
-                    "retryMethod": "MANUAL",
-                    "retryLimit": 1,
-                    "emailSubject": "post man test"
+                    "address": "test@email.com"
                 }
-            
+            ],
+                "SMS": [
+                {
+                    "address": "06000000000"
+                }
+            ]
+            },
+            "senderName": "vincent",
+            "message": "post man test",
+            "retryMethod": "MANUAL",
+            "retryLimit": 1,
+            "emailSubject": "post man test"
+        }
+    
+
++ headers
+
+            X-SESSION_ID:xxxxxxxxxxxx
+            Content-Type:application/json
         
 
 + response 200 (aplication/json)
@@ -184,19 +185,11 @@ To send this message always login first and use the session-id in the header, ho
 
 ### get response [GET]
 
-##### header parameters
++ headers
 
-| name          | type           | description  |
-| ------------- |:---------:| -----|
-| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
+            X-SESSION_ID:xxxxxxxxxxxx
+            Content-Type:application/json
 
-+ model
-
-        + headers
-        
-                    X-SESSION_ID:xxxxxxxxxxxx
-                    Content-Type:application/json
-        
 + response 200 (aplication/json)
 
         {
@@ -286,19 +279,11 @@ Contacts are set up as follows:
 
 ### get all contact [GET]
 
-#####header parameters
++ headers
 
-| name          | type           | description  |
-| ------------- |:---------:| -----|
-| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
+            X-SESSION_ID:xxxxxxxxxxxx
+            Content-Type:application/json
 
-+ model
-
-        + headers
-        
-                    X-SESSION_ID:xxxxxxxxxxxx
-                    Content-Type:application/json
-        
 
 + parameters
     + detailed (optional, String , `true`)... String `true` [true|false] When set to true Fetches all the contactInfos linked to each Contact, else only fetches the contactInfo ids linked to each contact.
@@ -323,34 +308,26 @@ Contacts are set up as follows:
 
 ### create a contact [POST]
 
-#####header parameters
++ headers
 
-| name          | type           | description  |
-| ------------- |:---------:| -----|
-| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
+            X-SESSION_ID:xxxxxxxxxxxx
+            Content-Type:application/json
 
-+ model
+
++ request
+
+        {
+            "id": 3,
+            "contactInfo": "1234567890",
+            "firstName": "Test",
+            "lastName": "Customer",
+            "contactInfoTag": "Name"|"Phone"|"Voip"|"Email"|"Fax"|"Address"|"DOB"|
+            "PURCHASED_NUMBER"|"Special"|"Other",
+            "label" : "Office",
+            "contactKey": 1,
+            "groupKeys": [1, 2, 3]
+        }
         
-        + headers
-        
-                    X-SESSION_ID:xxxxxxxxxxxx
-                    Content-Type:application/json
-        
-        
-        + request
-        
-                {
-                    "id": 3,
-                    "contactInfo": "1234567890",
-                    "firstName": "Test",
-                    "lastName": "Customer",
-                    "contactInfoTag": "Name"|"Phone"|"Voip"|"Email"|"Fax"|"Address"|"DOB"|
-                    "PURCHASED_NUMBER"|"Special"|"Other",
-                    "label" : "Office",
-                    "contactKey": 1,
-                    "groupKeys": [1, 2, 3]
-                }
-                
 
 + response 200 (application/json)
 
@@ -370,20 +347,12 @@ Contacts are set up as follows:
 
 ### get contact [GET]
 
-#####header parameters
++ headers
 
-| name          | type           | description  |
-| ------------- |:---------:| -----|
-| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
+            X-SESSION_ID:xxxxxxxxxxxx
+            Content-Type:application/json
 
-+ model
-        
-        + headers
-        
-                    X-SESSION_ID:xxxxxxxxxxxx
-                    Content-Type:application/json
-        
-        
+
 + response 200 (application/json)
     
         {
@@ -400,35 +369,24 @@ Contacts are set up as follows:
 
 ### update contact [PUT]
 
-#####header parameters
++ headers
 
-| name          | type           | description  |
-| ------------- |:---------:| -----|
-| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
+            X-SESSION_ID:xxxxxxxxxxxx
+            Content-Type:application/json
 
++ request
 
-
-
-+ model
-        
-        + headers
-        
-                    X-SESSION_ID:xxxxxxxxxxxx
-                    Content-Type:application/json
-        
-        + request
-        
-                {
-                    "id": 3,
-                    "contactInfo": "1234567890",
-                    "firstName": "Test",
-                    "lastName": "Customer",
-                    "contactInfoTag": "Name"|"Phone"|"Voip"|"Email"|"Fax"|"Address"|"DOB"|
-                    "PURCHASED_NUMBER"|"Special"|"Other",
-                    "label" : "Office",
-                    "contactKey": 1,
-                    "groupKeys": [1, 2, 3]
-                }
+        {
+            "id": 3,
+            "contactInfo": "1234567890",
+            "firstName": "Test",
+            "lastName": "Customer",
+            "contactInfoTag": "Name"|"Phone"|"Voip"|"Email"|"Fax"|"Address"|"DOB"|
+            "PURCHASED_NUMBER"|"Special"|"Other",
+            "label" : "Office",
+            "contactKey": 1,
+            "groupKeys": [1, 2, 3]
+        }
 
 + response 200 (aplication/json)
 
@@ -446,18 +404,10 @@ Contacts are set up as follows:
 
 ### delete contact [DELETE]
 
-#####header parameters
++ headers
 
-| name          | type           | description  |
-| ------------- |:---------:| -----|
-| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
-
-+ model
-        
-        + headers
-        
-                    X-SESSION_ID:xxxxxxxxxxxx
-                    Content-Type:application/json
+            X-SESSION_ID:xxxxxxxxxxxx
+            Content-Type:application/json
 
 + response 200 
 
@@ -469,11 +419,7 @@ Contacts are set up as follows:
 
 ### send new message manual [POST]
 
-#####header parameters
 
-| name          | type           | description  |
-| ------------- |:---------:| -----|
-| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
 
 #####body parameters
 
@@ -488,39 +434,42 @@ Contacts are set up as follows:
 |`broadcastName`| string    |Custom name to describe this broadcast|
 |`emailSubject` | string    |Only used for emailing, this sets the subject of the email|
 
-+ model
-        
-        + headers
-        
-                    X-SESSION_ID:xxxxxxxxxxxx
-                    Content-Type:application/json
-        
-        + request
-        
+
++ headers
+
+            X-SESSION_ID:xxxxxxxxxxxx
+            Content-Type:application/json
+
++ request
+
+        {
+            "addresses": {
+                "<AdapterType>": [
                 {
-                    "addresses": {
-                        "<AdapterType>": [
-                        {
-                            "address": "<email address1>”
-                        }
-                        {
-                            "address": "<email address2>”
-                        }
-                        ]
-                    },
-                        "adapterList": {
-                        "<AdapterType>": "<calling adapterId>"
-                    },
-                    "senderName": "<senderName (used for all but CALL channel)>",
-                    "message": "Test message",
-                    "audio": "http://autioURL.wav",
-                    "retryMethod": "AUTO|MANUAL",
-                    "retryLimit": <retryLimit>,
-                    "broadcastName": "<Custom name to describe this broadcast>",
-                    "emailSubject": "<email subject (used only for EMAIL channel)>",
-                    "language": "<language codes described>"
+                    "address": "<email address1>”
                 }
-        
+                {
+                    "address": "<email address2>”
+                }
+                ]
+            },
+                "adapterList": {
+                "<AdapterType>": "<calling adapterId>"
+            },
+            "senderName": "<senderName (used for all but CALL channel)>",
+            "message": "Test message",
+            "audio": "http://autioURL.wav",
+            "retryMethod": "AUTO|MANUAL",
+            "retryLimit": <retryLimit>,
+            "broadcastName": "<Custom name to describe this broadcast>",
+            "emailSubject": "<email subject (used only for EMAIL channel)>",
+            "language": "<language codes described>"
+        }
+
+   
+
+
+
 
 + response 200 (application/json)
 
@@ -566,19 +515,11 @@ Contacts are set up as follows:
 
 ### retrieve all messages [GET]
 
-#####header parameters
++ headers
 
-| name          | type           | description  |
-| ------------- |:---------:| -----|
-| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
+            X-SESSION_ID:xxxxxxxxxxxx
+            Content-Type:application/json
 
-+ model
-        
-        + headers
-        
-                    X-SESSION_ID:xxxxxxxxxxxx
-                    Content-Type:application/json
-        
 + response 200 (application/json) 
 
         {
@@ -622,29 +563,13 @@ Contacts are set up as follows:
 
 ### retrieve specifiec broadcast [GET]
 
-##### url parameters
++ headers
 
-| name          | type           | description  |
-| ------------- |:---------:| -----|
-| `broadcastid`| string    | Id of the broadcast |
-
-#####header parameters
-
-| name          | type           | description  |
-| ------------- |:---------:| -----|
-| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
+            X-SESSION_ID:xxxxxxxxxxxx
+            Content-Type:application/json
 
 + parameters
     + broadcastid (required, String, `xxxxxx`) ... string `xxxxxxxx` the id the broadcast
-
-+ model
-
-        + headers
-        
-                    X-SESSION_ID:xxxxxxxxxxxx
-                    Content-Type:application/json
-        
-
 
 + response 200 (application/json) 
 
@@ -687,19 +612,11 @@ Contacts are set up as follows:
 
 ### delete specific broadcast [DELETE]
 
-#####header parameters
++ headers
 
-| name          | type      | description  |
-| ------------- |:---------:| -----|
-| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
+            X-SESSION_ID:xxxxxxxxxxxx
+            Content-Type:application/json
 
-+ model
-
-        + headers
-        
-                    X-SESSION_ID:xxxxxxxxxxxx
-                    Content-Type:application/json
-        
 + parameters
     + broadcastid (required, String, `xxxxxx`) ... string `xxxxxxxx` the id the broadcast
 
