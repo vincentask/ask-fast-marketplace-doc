@@ -284,9 +284,12 @@ Contacts are set up as follows:
 |`groupKeys`        |array      |numbers of the group in which the contact is in|
 
 
-## create a contact [/accounts/contacts]
+## contacts [/accounts/contacts]
 
-This interface, has the CreateReadUpdateDelete methods for the Contact entity. Contact entity is the root reference for all contact infos. For example: Contact: Test Customer has mobile#: 1234567890 and email: testCustomer@test.com. In the backend, both mobile# and email are added as separate ContactInfo entities, with reference to the Contact (Test Customer). These contactInfos can belong to difference Groups as well.
+This interface, has the CreateReadUpdateDelete methods for the Contact entity. 
+Contact entity is the root reference for all contact infos. For example: Contact: Test Customer has mobile#: 1234567890 and email: testCustomer@test.com. 
+In the backend, both mobile# and email are added as separate ContactInfo entities, with reference to the Contact (Test Customer). 
+These contactInfos can belong to difference Groups as well.
 
 ### get all contact [GET]
 
