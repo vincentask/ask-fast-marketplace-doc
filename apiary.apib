@@ -85,6 +85,7 @@ To send the request you send a json with the question and the addresses to the s
 
 ### send message [POST]
 
+#### */products/broadcastnew/appid={appid}&instanceid={instanceid}*
 
 #####body parameters:
 
@@ -187,6 +188,8 @@ To send this message always login first and use the session-id in the header, ho
 
 ### get response [GET]
 
+#### */resource/examples/clipboard*
+
 + headers
 
             X-SESSION_ID:xxxxxxxxxxxx
@@ -239,6 +242,8 @@ To send a request always send the sessid in the header, this can be retrieved wi
 
 ### login [GET]
 
+#### */login?username={username}&password={password}*
+
 + Parameters
     + username (required, String , `vincent`)... String `username` of the user.
     + password (required, String , `xxxxxxx`) ... String `password` MD5 hassed.
@@ -279,7 +284,11 @@ Contacts are set up as follows:
 |`groupKeys`        |array      |numbers of the group in which the contact is in|
 
 
+## create a contact [/accounts/contacts]
+
 ### get all contact [GET]
+
+#### */accounts/contacts*
 
 + headers
 
@@ -306,9 +315,11 @@ Contacts are set up as follows:
         }
 
 
-## create a contact [/accounts/contacts]
+
 
 ### create a contact [POST]
+
+#### */accounts/contacts*
 
 + headers
 
@@ -349,6 +360,8 @@ Contacts are set up as follows:
 
 ### get contact [GET]
 
+#### */accounts/contacts*
+
 + headers
 
             X-SESSION_ID:xxxxxxxxxxxx
@@ -370,6 +383,8 @@ Contacts are set up as follows:
         }
 
 ### update contact [PUT]
+
+#### */accounts/contacts*
 
 + headers
 
@@ -421,7 +436,7 @@ Contacts are set up as follows:
 
 ### send new message manual [POST]
 
-
+#### */products/broadcastnew*
 
 #####body parameters
 
@@ -528,6 +543,8 @@ Contacts are set up as follows:
 
 ### retrieve all messages [GET]
 
+#### */products/broadcastnew*
+
 + headers
 
             X-SESSION_ID:xxxxxxxxxxxx
@@ -575,6 +592,8 @@ Contacts are set up as follows:
 ## retrieve broadcast [/products/broadcastnew/{broadcastid}]
 
 ### retrieve specifiec broadcast [GET]
+
+#### */products/broadcastnew/{broadcastid}*
 
 + headers
 
@@ -624,6 +643,8 @@ Contacts are set up as follows:
         }
 
 ### delete specific broadcast [DELETE]
+
+#### */products/broadcastnew/{broadcastid}*
 
 + headers
 
