@@ -5,7 +5,7 @@ HOST: http://askfastmarket.appspot.com
 
 <br>
 
-### this document is a work in progress
+### This document is a work in progress
 
 <br>
 
@@ -14,11 +14,11 @@ HOST: http://askfastmarket.appspot.com
 The marketplace is an extension to the Ask Fast API, which can be found [here](http://docs.askfast.apiary.io/). This gives you the possibility to host your questions and answers on our servers. so you do not have to program anything on the server side. 
 
 
-## authentication
+## Authentication
 
 For authentication the marketplace usses a session id token, this can be retrieved with the login call. This token has to be send in every call to the server in the header.
 
-## error handling
+## Error handling
 
 Ask Fast marketplace uses regular HTTP response codes to indicate suesses or fail of the API request. A 200 response indicates a succesfull request. The 4xx response often means an errer form the user side, this could be an invalid request or a not authorised (401).
 
@@ -31,7 +31,7 @@ Overview of HTTP response codes:
 - 5xx → internal server error, we try to make the error logs easy to read for you.
 
 
-## dates
+## Dates
 
 All dates are standard UNIX (epoch) coded. This represents the seconds passed since 01-01-1970. Some examples:
 
@@ -46,7 +46,7 @@ At the moment the pagination limitations is a 1000 responses per call. If you wi
 ## Rate limiting
 The Ask Fast Api uses a fair use policy, when you do not abuse the system you do not have a rate limiting
 
-## language codes
+## Language codes
 
 If you want to make a call and use Text To Speech (TTS) you can use the following language codes
 
@@ -85,9 +85,9 @@ If you want to make a call and use Text To Speech (TTS) you can use the followin
 To send your first message you have to give some information to the Market place. This includes the people whom you want to send you message to, the method of senden, etc. The example gives the bare minimum that the server needs to send a message. If you like to add more specific functionality all the parameters can be found at the documentation
 To send the request you send a json with the question and the addresses to the server. 
 
-## send first message [/products/broadcastnew/appid={appid}&instanceid={instanceid}]
+## send First message [/products/broadcastnew/appid={appid}&instanceid={instanceid}]
 
-### send message [POST]
+### Send message [POST]
 
 #### */products/broadcastnew/appid={appid}&instanceid={instanceid}*
 
@@ -196,9 +196,9 @@ To send this message always login first and use the session-id in the header, ho
             "ownerKey": "xxxxxxxxxxx"
         }
 
-## get response of your message [/resource/examples/clipboard]
+## Get response of your message [/resource/examples/clipboard]
 
-### get response [GET]
+### Get response [GET]
 
 #### */resource/examples/clipboard*
 
@@ -250,9 +250,9 @@ To send this message always login first and use the session-id in the header, ho
 
 To send a request always send the sessid in the header, this can be retrieved with the login call. Make sure the aplication is of type: JSON
 
-## login [/login?username={username}&password={password}]
+## Login [/login?username={username}&password={password}]
 
-### login [GET]
+### Login [GET]
 
 #### */login?username={username}&password={password}*
 
@@ -268,7 +268,7 @@ To send a request always send the sessid in the header, this can be retrieved wi
 
 + response 400 ()
 
-## get all contacts [/accounts/contacts?detailed={detailed}&limit={limit}&offset={offset}&orderby={orderby}&fetchOwener={fetchowner}]
+## Get all contacts [/accounts/contacts?detailed={detailed}&limit={limit}&offset={offset}&orderby={orderby}&fetchOwener={fetchowner}]
 
 The market place can also serve as a contact book to make it more convinient to store and retrieve contacts
 Contacts are set up as follows:
@@ -303,7 +303,7 @@ Contact entity is the root reference for all contact infos. For example: Contact
 In the backend, both mobile# and email are added as separate ContactInfo entities, with reference to the Contact (Test Customer). 
 These contactInfos can belong to difference Groups as well.
 
-### get all contact [GET]
+### Get all contact [GET]
 
 #### */accounts/contacts*
 
@@ -334,7 +334,7 @@ These contactInfos can belong to difference Groups as well.
 
 
 
-### create a contact [POST]
+### Create a contact [POST]
 
 #### */accounts/contacts*
 
@@ -375,7 +375,7 @@ These contactInfos can belong to difference Groups as well.
 
 ## handle contacts [/accounts/contacts/{contactId}]
 
-### get contact [GET]
+### Get contact [GET]
 
 #### */accounts/contacts*
 
@@ -399,7 +399,7 @@ These contactInfos can belong to difference Groups as well.
             "groupKeys": [1, 2, 3]
         }
 
-### update contact [PUT]
+### Update contact [PUT]
 
 #### */accounts/contacts*
 
@@ -436,7 +436,7 @@ These contactInfos can belong to difference Groups as well.
             "groupKeys": [1, 2, 3]
         }
 
-### delete contact [DELETE]
+### Delete contact [DELETE]
 
 + headers
 
@@ -449,9 +449,9 @@ These contactInfos can belong to difference Groups as well.
         status code: 200
         }
 
-## send messages [/products/broadcastnew]
+## Send messages [/products/broadcastnew]
 
-### send new message manual [POST]
+### Send new message manual [POST]
 
 #### */products/broadcastnew*
 
@@ -558,7 +558,7 @@ These contactInfos can belong to difference Groups as well.
 
         Error: Unsupported Media Type
 
-### retrieve answers [GET]
+### Retrieve answers [GET]
 
 #### */products/broadcastnew*
 
@@ -606,9 +606,9 @@ These contactInfos can belong to difference Groups as well.
             }
         }
         
-## retrieve broadcast [/products/broadcastnew/{broadcastid}]
+## Retrieve broadcast [/products/broadcastnew/{broadcastid}]
 
-### retrieve specifiec broadcast [GET]
+### Retrieve specifiec broadcast [GET]
 
 #### */products/broadcastnew/{broadcastid}*
 
@@ -659,7 +659,7 @@ These contactInfos can belong to difference Groups as well.
             }
         }
 
-### delete specific broadcast [DELETE]
+### Delete specific broadcast [DELETE]
 
 #### */products/broadcastnew/{broadcastid}*
 
@@ -675,7 +675,7 @@ These contactInfos can belong to difference Groups as well.
 
         ok
 
-#group support
+#group Support
 
 For support you can check stack overflow with the tag ["ask-fast"](http://stackoverflow.com/questions/tagged/ask-fast) or the tag ["ask-fast-marketplace"]( http://stackoverflow.com/questions/tagged/ask-fast-marketplace)
 If it is not there you can post questions with these tags.
@@ -683,7 +683,7 @@ If it is not there you can post questions with these tags.
 If you realy want to speak to us please email us at: support@ask-fast.com
 
 
-# group developer portal
+# group Developer portal
 
 #### click <a href="http://dev.ask-fast.com" target="_blank"> here </a> to go to the developer portal
 
