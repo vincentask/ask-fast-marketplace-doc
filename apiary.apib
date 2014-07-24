@@ -11,24 +11,24 @@ HOST: http://askfastmarket.appspot.com
 
 #### Api end point: http://askfastmarket.appspot.com
 
-The marketplace is an extension to the Ask Fast API, which can be found [here](http://docs.askfast.apiary.io/). This gives you the possibility to host your questions and answers on our servers. so you do not have to program anything on the server side. 
+The marketplace is an extension to the Ask Fast API, which can be found [here](http://docs.askfast.apiary.io/). This gives you the possibility to host your questions and answers on our servers, so you do not have to program anything on the server side. 
 
 
 ## Authentication
 
-For authentication the marketplace usses a session id token, this can be retrieved with the login call. This token has to be send in every call to the server in the header.
+For authentication the marketplace uses a session id token, this can be retrieved with the login call. This token has to be sent in every call to the server in the header.
 
 ## Error handling
 
-Ask Fast marketplace uses regular HTTP response codes to indicate suesses or fail of the API request. A 200 response indicates a succesfull request. The 4xx response often means an errer form the user side, this could be an invalid request or a not authorised (401).
+Ask Fast marketplace uses regular HTTP response codes to indicate success or failure of the API request. A 200 response indicates a succesfull request. The 4xx response often means an error from the user side, this could be an invalid request or a not authorised (401).
 
 Overview of HTTP response codes:
 
-- 200 → everything whent smoothly.
+- 200 → Everything went smoothly.
 - 400 → Bad request maybe a parameter is missing?
-- 401 → Not authorised, the autosisation faild.
+- 401 → Not authorised, the authorisation failed.
 - 404 → Request not found.
-- 5xx → internal server error, we try to make the error logs easy to read for you.
+- 5xx → internal server error, we try to make the error logs easy for you to read.
 
 
 ## Dates
@@ -41,10 +41,10 @@ All dates are standard UNIX (epoch) coded. This represents the seconds passed si
 
 ## Pagination
 
-At the moment the pagination limitations is a 1000 responses per call. If you wish to go back even further you can change the date attribute, to fetch the results for a certain period.  
+At the moment the pagination limitation is a 1000 responses per call. If you wish to go back even further you can change the date attribute, to fetch the results for a certain period.  
 
 ## Rate limiting
-The Ask Fast Api uses a fair use policy, when you do not abuse the system you do not have a rate limiting
+The Ask Fast API uses a fair use policy; if you don't abuse the system you don't have a rate limit.
 
 ## Language codes
 
@@ -60,7 +60,7 @@ If you want to make a call and use Text To Speech (TTS) you can use the followin
 |nl-nl|Dutch|
 |en-au|English (Australia)|
 |en-ca|English (Canada)|
-|en-gb|nglish (Great Britain)|
+|en-gb|English (Great Britain)|
 |en-in|English (India)|
 |en-us|English (United States)|
 |fi-fi|Finnish|
@@ -82,7 +82,7 @@ If you want to make a call and use Text To Speech (TTS) you can use the followin
 # Group Getting started
 
 
-To send your first message you have to give some information to the Market place. This includes the people whom you want to send you message to, the method of senden, etc. The example gives the bare minimum that the server needs to send a message. If you like to add more specific functionality all the parameters can be found at the documentation
+To send your first message you have to give some information to the Marketplace. This includes the people whom you want to send your message to, the method of sending, etc. The following example showes the bare minimum that the server needs to send a message. If you want to add more specific functionalities, all the parameters can be found in the documentation
 To send the request you send a json with the question and the addresses to the server. 
 
 ## send First message [/products/broadcastnew/appid={appid}&instanceid={instanceid}]
@@ -95,21 +95,21 @@ To send the request you send a json with the question and the addresses to the s
 
 | name          | description  |
 | ------------- | -----|
-| `appid`    | An app id of your chosing, so you can indentyfy your resposes easyly |
+| `appid`    | An app id of your chosing, so you can identify your resposes easily |
 | `instanceid`  | An extra id to indentify your question|
 
 
 ##### body parameters:
 
-To send this message always login first and use the session-id in the header, how to log in can be found in the documentation.
+To send this message always log in first and use the session-id in the header. How to log in can be found in the documentation.
 
 | name          | type      | description  |
 | ------------- |:---------:| -----|
-| `adresses`    | arrray    | addapters (SMS, EMAIL, etc) each array should have an array of adresses in the format: “adress”:”test@email.com” |
-| `senderName`  | string    | The name you want to appear to be the sender of the message |
+| `adresses`    | arrray    | adapters (SMS, EMAIL, etc) each adapter should have an array of adresses in the format: “adress”:”test@email.com” |
+| `senderName`  | string    | The name you want to appear as the sender of the message |
 | `message`     | string    | The body of the message. This should be short for sms texting |
-|`retryMethod`  |string     |AUTO or MANUAL -> if auto the system will repead as many times as set in the retry limit until there is a awnswer
-|`retryLimit`   |number     |Amout of times the server sends the message if there is no response
+|`retryMethod`  |string     |AUTO or MANUAL -> if AUTO the system will repeat as many times as set in the retry limit until there is an answer
+|`retryLimit`   |number     |Amount of times the server sends the message if there is no response
 |`broadcastName`|string     |Custom name to describe this broadcast|
 |`emailSubject` |string     |Only used for emailing, this sets the subject of the email|
 
@@ -117,7 +117,7 @@ To send this message always login first and use the session-id in the header, ho
 
 | name          | type           | description  |
 | ------------- |:---------:| -----|
-| `X-SESSION_ID`| string    | bearer token can be found at the developer page |
+| `X-SESSION_ID`| string    | bearer token can be found on the developer page |
 
 
 + parameters
@@ -245,7 +245,7 @@ To send this message always login first and use the session-id in the header, ho
             "ownerKey": "vincent"
         }
 
-# group Api documentation
+# group API documentation
 
 
 To send a request always send the sessid in the header, this can be retrieved with the login call. Make sure the aplication is of type: JSON
@@ -270,7 +270,7 @@ To send a request always send the sessid in the header, this can be retrieved wi
 
 ## Get all contacts [/accounts/contacts?detailed={detailed}&limit={limit}&offset={offset}&orderby={orderby}&fetchOwener={fetchowner}]
 
-The market place can also serve as a contact book to make it more convinient to store and retrieve contacts
+The market place can also serve as a contact book to make it more convenient to store and retrieve contacts.
 Contacts are set up as follows:
 
         {
@@ -296,12 +296,12 @@ Contacts are set up as follows:
 |`groupKeys`        |array      |numbers of the group in which the contact is in|
 
 
-## contacts [/accounts/contacts]
+## Contacts [/accounts/contacts]
 
-This interface, has the CreateReadUpdateDelete methods for the Contact entity. 
+This interface has the CreateReadUpdateDelete methods for the Contact entity. 
 Contact entity is the root reference for all contact infos. For example: Contact: Test Customer has mobile#: 1234567890 and email: testCustomer@test.com. 
 In the backend, both mobile# and email are added as separate ContactInfo entities, with reference to the Contact (Test Customer). 
-These contactInfos can belong to difference Groups as well.
+These contactInfos can belong to different Groups as well.
 
 ### Get all contact [GET]
 
@@ -459,12 +459,12 @@ These contactInfos can belong to difference Groups as well.
 
 | name          | type      | description  |
 | ------------- |:---------:| -----|
-| `adapterType` | string    | addapters [SMS | CALL | EMAIL | XMPP | FACEBOOK | TWITTER] |
-| `adresses`    | arrray    | addapters (SMS, EMAIL, etc) each array should have an array of adresses in the format: “adress”:”test@email.com” |
+| `adapterType` | string    | adapters [SMS | CALL | EMAIL | XMPP | FACEBOOK | TWITTER] |
+| `adresses`    | arrray    | adapters (SMS, EMAIL, etc) each addapter should have an array of addresses in the format: “address”:”test@email.com” |
 | `senderName`  | string    | The name you want to appear to be the sender of the message |
 | `message`     | string    | The body of the message. This should be short for sms texting |
-|`retryMethod`  | string    |AUTO or MANUAL -> if auto the system will repead as many times as set in the retry limit until there is a awnswer
-|`retryLimit`   | number    |Amout of times the server sends the message if there is no response
+|`retryMethod`  | string    |AUTO or MANUAL -> if AUTO the system will repead as many times as set in the retry limit until there is an answer
+|`retryLimit`   | number    |Amount of times the server sends the message if there is no response
 |`broadcastName`| string    |Custom name to describe this broadcast|
 |`emailSubject` | string    |Only used for emailing, this sets the subject of the email|
 
